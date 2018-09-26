@@ -19,7 +19,7 @@ service: slacknotification-notifer # NOTE: update this with your service name
 
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python2.7
   profile: ${file(../config.${self:provider.stage}.json):profile}
   region: ap-southeast-2
   environment:
@@ -117,3 +117,6 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-python-requirements
